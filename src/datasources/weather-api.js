@@ -3,28 +3,22 @@ const { RESTDataSource } = require("@apollo/datasource-rest");
 class WeatherAPI extends RESTDataSource {
   // the Catstronauts catalog is hosted on this server
   baseURL = "https://odyssey-lift-off-rest-api.herokuapp.com/";
+  //   try {
+  ACCU_KEY = "GJKGfMXiYFeHPUV3p3oHc28uvCAEvLTY";
+  locationKey = 347936;
+  url = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=${ACCU_KEY}&details=true`;
 
-  getTracksForHome() {
-    return this.get("tracks");
-  }
+  // const response = await axios.get(url);
+  // const { data } = response;
 
-  getAuthor(authorId) {
-    return this.get(`author/${authorId}`);
-  }
+  // res.status(200).json({ name: data });
+  //   } catch (error) {
+  //     console.error("An error occurred:", error);
+  //     res.status(500).json({ error: "Error accessing the weather data" });
+  //   }
 
-  getTrack(trackId) {
-    return this.get(`track/${trackId}`);
-  }
-
-  getTrackModules(trackId) {
-    return this.get(`track/${trackId}/modules`);
-  }
-
-  getModule(moduleId) {
-    return this.get(`module/${moduleId}`);
-  }
-  incrementTrackViews(trackId) {
-    return this.patch(`track/${trackId}/numberOfViews`);
+  async getMovie(id) {
+    return this.get(`movies/${encodeURIComponent(id)}`);
   }
 }
 
