@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.15",
+    "@apollo/client": "^3.8.0-alpha.15",
     "@apollo/datasource-rest": "^5.0.2",
+    "@apollo/experimental-nextjs-app-support": "^0.1.0",
     "@apollo/server": "^4.5.0",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "graphql": "^16.6.0",
